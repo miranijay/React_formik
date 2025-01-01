@@ -14,7 +14,8 @@ export default function ContactForm() {
 
         validationSchema: Yup.object({
             name: Yup.string()
-                .max(15, 'Must be 15 characters or less')
+                .min(3, 'Too Short!')
+                .max(15, 'Too Long!')
                 .required('Required!'),
             email: Yup.string()
                 .email('Invalid email address')
